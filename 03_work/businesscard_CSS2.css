@@ -25,9 +25,16 @@ email {
 	margin-top: 3%;
 }
 
+/* puts the tags before the email */
+email::before {content: "email: "}
+
 phone {
 	font-size: 90%;
 	color: #523819;
 	font-size: 90%;
 	display: block;
 }
+
+
+phone::before { content: attr(type) ": " }
+phone[pimary]::after {content: " (" attr(primary) ")"}
