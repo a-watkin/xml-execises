@@ -12,7 +12,24 @@
 			</style>
 		</head>
 		<body>
+			<!-- xpath selectors are used with select -->
+			<!-- selects all the item tags in items, the whole collection will be returned -->
+			<xsl:for-each select="/items/item">
+				<!-- HTML for each returned element, except this is XML too... 
+				so you have to have closing tags for everything-->
+				<img>
 
+					<xsl:attribute name="src">
+					<!-- doens't need a full path because it's already inside a subnode -->
+						<xsl:value-of select="photo"/>
+					</xsl:attribute>
+				</img>
+
+				<xsl:value-of select="name"/>
+				<!-- inserts a string seperated by a space and three periods -->
+				<xsl:text> ... </xsl:text>
+				<xsl:value-of select="type"/>
+			</xsl:for-each>
 		</body>
 		</html>
 	</xsl:template>

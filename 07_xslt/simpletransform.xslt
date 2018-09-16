@@ -7,11 +7,14 @@
 		<html>
 		<head>
 			<title>New Herbal Tea Available!</title>
+			<!-- xslt and css cand be used together -->
+			<link rel="stylesheet" href="simpletransform.css"/>
 		</head>
 		<body>
 			<img src="photos/javaco_tea_logo.gif" />
 			<h1>
-
+				<!-- gets the text value of the tag matched by JavacoTea -->
+				<xsl:value-of select="text()"/>
 			</h1>
 		</body>
 		</html>
